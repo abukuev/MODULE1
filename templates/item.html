@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карточка товара</title>
+</head>
+<body>
+<h1><a href="/"> Home </a> /  <a href="/items"> Items </a> / <a href="/about"> About </a></h1>
+{% for it in  items%}
+{% if it.id == item_id%}
+    <h2> Имя: {{it.name}}</h2>
+    {% if  it.quantity > 0 %}<p> Количество: {{it.quantity}}</p>
+    {% else %} <p> Данный товар отсутствует</p>
+    {% endif %}
+{% endif %}
+{% endfor %}
+    <p> <a href="/items">Список товаров</a>
+</body>
+</html>
